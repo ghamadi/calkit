@@ -1,4 +1,4 @@
-# CALKIT 
+# Calkit 
 A small web application that enables customized calculation templates.
 
 > **Note**
