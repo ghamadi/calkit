@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "ESNext",
     "useDefineForClassFields": true,
+    "strictPropertyInitialization": false,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "allowJs": false,
     "skipLibCheck": true,
@@ -15,9 +16,10 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "baseUrl": ".",
-    "paths": { "~/*": ["./src/*"] }
+    "baseUrl": "src",
+    "paths": { "~/*": ["./*"] }
   },
   "include": ["src"],
+  "exclude": ["node_modules", "**/node_modules/*"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
