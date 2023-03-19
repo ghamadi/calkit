@@ -1,4 +1,4 @@
-import { Component, ErrorInfo, ReactNode } from 'react';
+import { Component, ReactNode } from 'react';
 
 interface AppErrorBoundaryProps {
   children: ReactNode;
@@ -13,15 +13,10 @@ export default class ErrorBoundary extends Component<AppErrorBoundaryProps> {
   state: ErrorBoundaryState = { error: null };
 
   static getDerivedStateFromError(error: Error) {
-    if (error) {
-      return { hasError: true, error };
-    }
+    return { error };
   }
 
   // TODO: Implement componentDidCatch
-  componentDidCatch(_error: Error, _info: ErrorInfo) {
-    // console.log(error, info);
-  }
 
   render() {
     if (this.state.error) {
