@@ -1,12 +1,18 @@
-export type BracketEdges = [number, number | undefined];
+export interface BracketProps {
+  min: number;
+  max?: number;
+  multiplier: number;
+}
 
 export class Bracket {
   readonly min: number;
   readonly max: number;
+  readonly multiplier: number;
 
-  constructor([min, max]: BracketEdges) {
+  constructor({ min, max, multiplier }: BracketProps) {
     this.min = min;
     this.max = max ?? Infinity;
+    this.multiplier = multiplier;
   }
 
   get size() {

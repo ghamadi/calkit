@@ -1,4 +1,4 @@
-import { Bracket, BracketEdges } from '~/models/bracket-calculation/bracket';
+import { Bracket, BracketProps } from '~/models/bracket-calculation/bracket';
 
 interface BracketsTemplateOptions {
   inputUnit?: string;
@@ -12,7 +12,7 @@ export class BracketsTemplate {
   readonly fixedValue: number;
   readonly outputUnit: string;
 
-  constructor(brackets: Bracket[] | BracketEdges[], otpions: BracketsTemplateOptions = {}) {
+  constructor(brackets: Bracket[] | BracketProps[], otpions: BracketsTemplateOptions = {}) {
     this.inputUnit = otpions.inputUnit ?? '';
     this.fixedValue = otpions.fixedValue ?? 0;
     this.outputUnit = otpions.outputUnit ?? '';
@@ -20,7 +20,7 @@ export class BracketsTemplate {
     brackets.forEach((bracket) => this.addBracket(bracket));
   }
 
-  addBracket(input: Bracket | BracketEdges) {
+  addBracket(input: Bracket | BracketProps) {
     const bracket = input instanceof Bracket ? input : new Bracket(input);
     this.brackets.push(bracket);
   }
