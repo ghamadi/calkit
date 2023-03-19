@@ -34,7 +34,7 @@ export class BracketsTemplate {
 
   /**
    * @returns The list of indexes of brackets that
-   * either conflict with previous ones or are preceded a gap
+   * either conflict with previous ones or are preceded by a gap
    */
   get conflictingIndexes() {
     return this.brackets
@@ -52,8 +52,7 @@ export class BracketsTemplate {
   }
 
   /**
-   * @returns The list of indexes of brackets that
-   * have invalid ranges
+   * @returns The list of indexes of brackets that have invalid ranges
    */
   get invalidBrackets() {
     return this.brackets
