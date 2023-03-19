@@ -1,7 +1,9 @@
 # CALKIT 
 A small web application that enables customized calculation templates.
 
-> Note: The name - _Calkit_ - took literally 30 seconds to come up with. It may or may not change in the future.
+> Note: 
+> 
+> The name - _Calkit_ - took literally 30 seconds to come up with. It may or may not change in the future.
 
 <br/>
 
@@ -21,7 +23,9 @@ npm install
 npm start
 ```
 
-> Note: This project is still in the early stages of development. There are no stable features yet.
+> Note: 
+> 
+> This project is still in the early stages of development. There are no stable features yet.
 
 <br />
 
