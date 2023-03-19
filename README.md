@@ -1,11 +1,9 @@
 # CALKIT 
 A small web application that enables customized calculation templates.
 
-> Note: 
-> 
+> **Note**
+>
 > The name - _Calkit_ - took literally 30 seconds to come up with. It may or may not change in the future.
-
-<br/>
 
 ## Setup
 ### Clone the repo
@@ -23,11 +21,9 @@ npm install
 npm start
 ```
 
-> Note: 
+> **Note**
 > 
 > This project is still in the early stages of development. There are no stable features yet.
-
-<br />
 
 ## Planned Features
 ### **1. Bracket Calculations**
@@ -50,5 +46,3 @@ npm start
 #### _Example use cases:_ 
 - Evaluation of general algebreic expressions
 - Labels allow for practical uses (such as measurement reductions)
-
-<br/>
