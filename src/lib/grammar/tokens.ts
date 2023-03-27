@@ -98,5 +98,6 @@ export const Identifier = createToken({
 
 export const FnProgressive = createToken({
   name: TokenName.FN_Progressive,
-  pattern: /progressive/i
+  pattern: /progressive/i,
+  longer_alt: Identifier
 });
