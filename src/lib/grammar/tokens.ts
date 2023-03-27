@@ -19,7 +19,10 @@ export enum TokenName {
   MUL_OP = 'MulOperator',
   EXPONENT_OP = 'ExponentOperator',
   FACTORIAL_OP = 'FactorialOperator',
-  ASSIGN_OP = 'AssignmentOperator'
+  ASSIGN_OP = 'AssignmentOperator',
+
+  // reserved keywords (`FN_` indicates a predefined function's name)
+  FN_Progressive = 'FnProgressive'
 }
 
 export const Whitespace = createToken({
@@ -91,4 +94,9 @@ export const StringLiteral = createToken({
 export const Identifier = createToken({
   name: TokenName.ID,
   pattern: /[a-z_]+[a-z_0-9]*/i
+});
+
+export const FnProgressive = createToken({
+  name: TokenName.FN_Progressive,
+  pattern: /progressive/i
 });
