@@ -2,6 +2,7 @@ import { createToken, Lexer } from 'chevrotain';
 
 export enum TokenName {
   // special characters
+  SEMI = 'Semicolon',
   COMMA = 'Comma',
   LEFT_PAREN = 'LeftParen',
   RIGHT_PAREN = 'RightParen',
@@ -34,6 +35,11 @@ export const Whitespace = createToken({
 export const Comma = createToken({
   name: TokenName.COMMA,
   pattern: /,/
+});
+
+export const Semicolon = createToken({
+  name: TokenName.SEMI,
+  pattern: /;/
 });
 
 export const AssignmentOperator = createToken({
