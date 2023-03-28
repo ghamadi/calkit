@@ -19,27 +19,30 @@ Functions will be added to the grammar as they are implemented.
                     |  <expression>
 <assignment>      ::=  <identifier> '=' <expression> 
                     |  <identifier> '=' <string_literal>
-<expression>      ::=  <product> 
-                    |  <expression> <addop> <product>
-<product>         ::=  <exponent> 
-                    |  <product> <mulop> <exponent>
-<exponent>        ::=  <signed> 
-                    |  <exponent> '^' (<signed>) 
-                    |  <exponent> '^' <value>
-<signed>          ::=  <value> 
+<expression>      ::=  <product> <expression_tail>
+<expression_tail> ::=  <addop> <product> <expression_tail>
+                    |  ε
+<product>         ::=  <exponent> <product_tail>
+<product_tail>    ::=  <mulop> <exponent> <product_tail>
+                    |  ε
+<exponent>        ::=  <signed> <exponent_tail>
+<exponent_tail>   ::=  '^' <exponent> 
+                    |  ε
+<signed>          ::=  <unsigned>
                     |  <addop> <signed>
-<value>           ::=  <factorial> 
-                    |  <numeric_literal> 
+<unsigned>        ::=  <value> <unsigned_tail>
+<unsigned_tail>   ::=  '!'
+                    |  ε
+<value>           ::=  <numeric_literal> 
                     |  <identifier> 
                     |  <cfunction> 
                     |  <sfunction> 
                     |  '(' <expression> ')'
-<factorial>       ::=  <value> '!'
 <cfunction>       ::=  <identifier> '(' <parameters> ')' 
 <sfunction>       ::=  progressive(<brackets>, <expression>)
 <parameters>      ::=  <expression> 
                     |  <expression> ',' <parameters>
-<brackets>        ::=  '[' <numeric_literal>, <numeric_literal>, <numeric_literal> ']' 
+<brackets>        ::=  '[' <numeric_literal> ',' <numeric_literal> ',' <numeric_literal> ']' 
                     |  '[' <numeric_literal>, <numeric_literal>, <numeric_literal> ']', <brackets>
 <numeric_literal> ::=  /[0-9]+[.]?[0-9]*([eE][+\-][0-9]+)?/
 <string_literal>  ::=  /".*"/
